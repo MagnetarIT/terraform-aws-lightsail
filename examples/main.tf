@@ -7,7 +7,4 @@ module "lightsail" {
   namespace = "mag"
   environment = "dev"
   name = "myapp"
-  
-  
-
 }

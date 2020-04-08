@@ -1,9 +1,9 @@
 <a href=https://magnetarconsulting.co.uk><img src="https://magnetarconsulting.co.uk/wp-content/uploads/2020/04/small-helping-you-innovate-magnetar.png" width="300"></a>
 
 # terraform-aws-lightsail
-Terraform (>= 0.12.0) module to create an Lightsail instances
+Terraform (>= 0.12.0) module to create an Lightsail instance
 
-[![Build Status](https://dev.azure.com/MagnetarIT/terraform-aws-ec2/_apis/build/status/MagnetarIT.terraform-aws-ec2?branchName=master)](https://dev.azure.com/MagnetarIT/terraform-aws-ec2/_build/latest?definitionId=14&branchName=master) ![Latest Release](https://img.shields.io/github/release/MagnetarIT/terraform-aws-ec2.svg)
+[![Build Status](https://dev.azure.com/MagnetarIT/terraform-aws-lightsail/_apis/build/status/MagnetarIT.terraform-aws-lightsail?branchName=master)](https://dev.azure.com/MagnetarIT/terraform-aws-lightsail/_build/latest?definitionId=14&branchName=master) ![Latest Release](https://img.shields.io/github/release/MagnetarIT/terraform-aws-lightsail.svg)
 
 
 - [Intro](#Intro)
@@ -18,6 +18,16 @@ Terraform (>= 0.12.0) module to create an Lightsail instances
 ## Example
 ```hcl
 
+provider "aws" {
+  region = "eu-west-2"
+}
+
+module "lightsail" {
+  source = "../"
+  namespace = "mag"
+  environment = "dev"
+  name = "myapp"
+}
 
 ```
 
