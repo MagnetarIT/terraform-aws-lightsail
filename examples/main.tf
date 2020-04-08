@@ -7,4 +7,5 @@ module "lightsail" {
   namespace = "mag"
   environment = "dev"
   name = "myapp"
+  key_pair_name = "Test"
 }
