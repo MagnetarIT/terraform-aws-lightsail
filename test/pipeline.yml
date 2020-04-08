@@ -18,7 +18,7 @@ steps:
     $env:AWS_ACCESS_KEY_ID="$(AWS_ACCESS_KEY_ID)"
     $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
     terraform init
-    terraform plan
+    terraform apply -auto-approve
   displayName: Terraform apply [testing example]
 
 - powershell: |
