@@ -40,7 +40,7 @@ resource "null_resource" "email_alarm" {
   count = var.enable_email_alarm == true ? 1 : 0
   provisioner "local-exec" {
     command = <<EOT
-      aws lightsail put-alarm --alarm-name ${module.naming.id}-status-checks --metric-name StatusCheckFailed --monitored-resource-name ${module.naming.id} --comparison-operator GreaterThanThreshold --threshold 0 --evaluation-periods 1 --region ${data.aws_region.default.name} --contact-protocols 'Email'
+      aws lightsail put-alarm --contact-protocols "Email" --alarm-name ${module.naming.id}-status-checks --metric-name StatusCheckFailed --monitored-resource-name ${module.naming.id} --comparison-operator GreaterThanThreshold --threshold 0 --evaluation-periods 1 --region ${data.aws_region.default.name}
     EOT 
   }
   depends_on = [aws_lightsail_instance.instance]
