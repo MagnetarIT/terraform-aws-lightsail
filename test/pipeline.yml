@@ -17,8 +17,8 @@ steps:
     cd examples
     $env:AWS_ACCESS_KEY_ID="$(AWS_ACCESS_KEY_ID)"
     $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
-    . terraform init
-    . terraform apply -auto-approve
+    cmd.exe /c terraform init
+    cmd.exe /c terraform apply -auto-approve
   displayName: Terraform apply [testing example]
 
 - powershell: |
@@ -26,6 +26,6 @@ steps:
     cd examples
     $env:AWS_ACCESS_KEY_ID="$(AWS_ACCESS_KEY_ID)"
     $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
-    . terraform init
-    . terraform destroy -auto-approve
+    cmd.exe /c terraform init
+    cmd.exe /c terraform destroy -auto-approve
   displayName: Terraform destroy [testing example]
