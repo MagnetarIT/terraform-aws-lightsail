@@ -29,3 +29,4 @@ steps:
     terraform init
     terraform destroy -auto-approve
   displayName: Terraform destroy [testing example]
+  condition: always()
