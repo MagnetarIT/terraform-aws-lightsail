@@ -4,10 +4,18 @@ module "naming" {
   environment = var.environment
   name        = var.name
   attributes  = var.attributes
-  tags        = var.tags
+  tags        = merge(var.tags,local.tags)
 }
 
 data "aws_region" "default" {
+}
+
+locals {
+  tags = map(
+    "Application", var.name, 
+    "CustomerEmail", var.customer_email, 
+    "CustomerBusinessName", var.customer_business_name,
+  )
 }
 
 resource "aws_lightsail_instance" "instance" {

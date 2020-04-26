@@ -3,8 +3,11 @@ provider "aws" {
 }
 
 module "lightsail" {
-  source = "../"
-  namespace = "mag"
-  environment = "dev"
-  name = "myapp"
+  source                 = "../"
+  namespace              = "mag"
+  environment            = "dev"
+  name                   = "myapp"
+  customer_email         = "kate@writingit.co.uk"
+  customer_business_name = "WritingIT"
+  application            = "website"
 }

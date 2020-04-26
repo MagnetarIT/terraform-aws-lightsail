@@ -67,4 +67,17 @@ variable "enable_email_alarm" {
   description = "Enable metric for StatusCheckFailed which will notify using email"
 }
 
+variable "customer_email" {
+  type        = string
+  description = "Customers email address, used to track owners of the platform, used for notifications and reporting"
+}
 
+variable "customer_business_name" {
+  type        = string
+  description = "Customers business name, used for notifications and reporting"
+}
+
+variable "application" {
+  type        = string
+  description = "Application running on the lightsail instance e.g `website`"
+}
