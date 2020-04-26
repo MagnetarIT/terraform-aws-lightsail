@@ -76,8 +76,3 @@ variable "customer_business_name" {
   type        = string
   description = "Customers business name, used for notifications and reporting"
 }
-
-variable "application" {
-  type        = string
-  description = "Application running on the lightsail instance e.g `website`"
-}

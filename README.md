@@ -60,6 +60,8 @@ This module will create the following resources
 | blueprint\_id | n/a | `string` | `"wordpress"` | no |
 | bundle\_id | The bundle of specification information | `string` | `"micro_2_0"` | no |
 | create\_static\_ip | Create and attach a statis IP to the instance | `bool` | `true` | no |
+| customer\_business\_name | Customers business name, used for notifications and reporting | `string` | n/a | yes |
+| customer\_email | Customers email address, used to track owners of the platform, used for notifications and reporting | `string` | n/a | yes |
 | enable\_email\_alarm | Enable metric for StatusCheckFailed which will notify using email | `bool` | `true` | no |
 | environment | Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT' | `string` | n/a | yes |
 | key\_pair\_name | The name of your key pair. Created in the Lightsail console (cannot use aws\_key\_pair at this time) | `string` | `""` | no |

@@ -12,7 +12,7 @@ data "aws_region" "default" {
 
 locals {
   tags = map(
-    "Application", var.application, 
+    "Application", var.name, 
     "CustomerEmail", var.customer_email, 
     "CustomerBusinessName", var.customer_business_name,
   )
