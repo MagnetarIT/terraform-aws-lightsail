@@ -49,6 +49,12 @@ variable "key_pair_name" {
   description = "The name of your key pair. Created in the Lightsail console (cannot use aws_key_pair at this time)"
 }
 
+variable "use_default_key_pair" {
+  type        = string
+  default     = "false"
+  description = "Default key pair name will be used, you must keep 'key_pair_name' empty"
+}
+
 variable "user_data" {
   type        = string
   default     = ""

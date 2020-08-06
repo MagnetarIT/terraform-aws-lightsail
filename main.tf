@@ -23,7 +23,7 @@ resource "aws_lightsail_instance" "instance" {
   availability_zone = var.availability_zone
   blueprint_id      = var.blueprint_id
   bundle_id         = var.bundle_id
-  key_pair_name     = var.key_pair_name == "" ? "${module.naming.id}-keypair" : var.key_pair_name
+  key_pair_name     = var.key_pair_name == "" && var.use_default_key_pair == false ? "${module.naming.id}-keypair" : var.key_pair_name
   tags              = module.naming.tags
   depends_on        = [aws_lightsail_key_pair.instance]
 }
@@ -40,7 +40,7 @@ resource "aws_lightsail_static_ip" "instance" {
 }
 
 resource "aws_lightsail_key_pair" "instance" {
-  count = var.key_pair_name == "" ? 1 : 0
+  count = var.key_pair_name == "" && var.use_default_key_pair == false ? 1 : 0
   name  = "${module.naming.id}-keypair"
 }
 

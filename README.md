@@ -49,8 +49,6 @@ This module will create the following resources
 | aws | ~> 2.0 |
 | null | ~> 2.0 |
 
----
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -68,9 +66,8 @@ This module will create the following resources
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | n/a | yes |
 | namespace | Namespace, which could be your team, business name or abbreviation, e.g. 'mag' or 'tar' | `string` | n/a | yes |
 | tags | Additional tags (e.g. `map('BusinessUnit','XYZ')` | `map(string)` | `{}` | no |
+| use\_default\_key\_pair | Default key pair name will be used, you must keep 'key\_pair\_name' empty | `string` | `"false"` | no |
 | user\_data | launch script to configure server with additional user data | `string` | `""` | no |
-
----
 
 ## Outputs
 
