@@ -50,8 +50,8 @@ variable "key_pair_name" {
 }
 
 variable "use_default_key_pair" {
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
   description = "Default key pair name will be used, you must keep 'key_pair_name' empty"
 }
 
